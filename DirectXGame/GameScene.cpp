@@ -87,6 +87,9 @@ void GameScene::Initialize(DirectXCommon* dxCommon, Input* input, Audio* audio) 
 	enemyBulletModel = enemyBulletModel->CreateFromObject("RedBullet");
 	skydomeModel = skydomeModel->CreateFromObject("skydome");
 
+	//モデル名を指定して読み込み
+	FbxLoader::GetInstance()->LoadModelFromFile("cube");
+
 	// 3Dオブジェクト生成
 	playerObj = Object3d::Create();
 	enemyObj = Object3d::Create();
