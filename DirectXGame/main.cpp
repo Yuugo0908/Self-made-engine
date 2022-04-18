@@ -3,6 +3,10 @@
 #include "Audio.h"
 #include "GameScene.h"
 //#include "fbxsdk.h"
+<<<<<<< HEAD
+=======
+#include "FbxLoader.h"
+>>>>>>> master
 
 //# Windowsアプリでのエントリーポイント(main関数)
 int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
@@ -30,6 +34,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	//入力の初期化
 	input = new Input();
 	input->Initialize(win->GetInstance(), win->GetHwnd());
+
+	//FBXの初期化
+	FbxLoader::GetInstance()->Initialize(dxCommon->GetDevice());
 
 	// オーディオの初期化
 	audio = new Audio();
@@ -94,6 +101,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	safe_delete(audio);
 	safe_delete(input);
 	safe_delete(dxCommon);
+	FbxLoader::GetInstance()->Finalize();
 
 	// ゲームウィンドウの破棄
 	win->TerminateGameWindow();

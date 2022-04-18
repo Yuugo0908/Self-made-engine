@@ -84,6 +84,9 @@ void GameScene::Initialize(DirectXCommon* dxCommon, Input* input, Audio* audio) 
 	playerModel = playerModel->CreateFromObject("RedBox");
 	skydomeModel = skydomeModel->CreateFromObject("skydome");
 
+	//モデル名を指定して読み込み
+	FbxLoader::GetInstance()->LoadModelFromFile("cube");
+
 	// 3Dオブジェクト生成
 	playerObj = Object3d::Create();
 	skydomeObj = Object3d::Create();

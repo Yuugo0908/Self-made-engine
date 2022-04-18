@@ -11,6 +11,7 @@
 #include "Model.h"
 #include "stdlib.h"
 #include "time.h"
+#include "FbxLoader.h"
 
 #define SHOT 100
 
